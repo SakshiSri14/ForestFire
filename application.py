@@ -27,20 +27,20 @@ def predict_data():
         RH = float(request.form.get('RH'))
         Ws = float(request.form.get('Ws'))
         Rain = float(request.form.get('Rain'))
-        FWI = float(request.form.get('FWI'))
+        # FWI = float(request.form.get('FWI'))
         FFMC = float(request.form.get('FFMC'))
         DMC = float(request.form.get('DMC'))
         ISI = float(request.form.get('ISI'))
         Classes = float(request.form.get('Classes'))
         Region = float(request.form.get('Region'))
         
-        input_data = np.array([[RH, FWI, Ws, Rain, FFMC, DMC, ISI, Classes, Region]])
-        print(f"Input data has {input_data.shape[1]} features.")
+        # input_data = np.array([[RH, FWI, Ws, Rain, FFMC, DMC, ISI, Classes, Region]])
+        # print(f"Input data has {input_data.shape[1]} features.")
 
-            # Check the number of features expected by the scaler
-        print(f"The StandardScaler expects {standard_scaler.n_features_in_} features.")
+        #     # Check the number of features expected by the scaler
+        # print(f"The StandardScaler expects {standard_scaler.n_features_in_} features.")
         
-        scaled_data = standard_scaler.transform([[RH,FWI,Ws,Rain,FFMC,DMC,ISI,Classes,Region]])
+        scaled_data = standard_scaler.transform([[RH,Ws,Rain,FFMC,DMC,ISI,Classes,Region]])
         result = lassocv_model.predict(scaled_data)
         
         
