@@ -27,7 +27,7 @@ def predict_data():
         RH = float(request.form.get('RH'))
         Ws = float(request.form.get('Ws'))
         Rain = float(request.form.get('Rain'))
-        # FWI = float(request.form.get('FWI'))
+        Temperature = float(request.form.get('Temperature'))
         FFMC = float(request.form.get('FFMC'))
         DMC = float(request.form.get('DMC'))
         ISI = float(request.form.get('ISI'))
@@ -40,7 +40,7 @@ def predict_data():
         #     # Check the number of features expected by the scaler
         # print(f"The StandardScaler expects {standard_scaler.n_features_in_} features.")
         
-        scaled_data = standard_scaler.transform([[RH,Ws,Rain,FFMC,DMC,ISI,Classes,Region]])
+        scaled_data = standard_scaler.transform([[RH,Ws,Rain,Temperature,FFMC,DMC,ISI,Classes,Region]])
         result = lassocv_model.predict(scaled_data)
         
         
