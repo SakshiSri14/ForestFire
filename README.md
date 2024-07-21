@@ -33,10 +33,11 @@ The dataset includes various meteorological and environmental factors such as:
   
 ## Project Structure
 - `application.py`: Main Flask application file.
-- `model.pkl`: Pickle file containing the trained model.
+- `lassocv.pkl`: Pickle file containing the trained model.
 - `templates/`: Folder containing HTML templates.
 - `README.md`: Project documentation.
 - `requirements.txt`: List of required packages.
+- `lassoregression.ipynb` : Jupyter Notebook where all analysis took place.
 
 ## Model Evaluation
 The models were evaluated using cross-validation and the following metrics:
